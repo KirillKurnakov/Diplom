@@ -70,6 +70,9 @@
         if (response.status === 200) {
           this.message = "Авторизация успешна";
           this.messageClass = "text-green-600";
+          setTimeout(() => {
+                this.$router.push('/main');
+            }, 1000);
         } else if (response.status === 403) {
           this.message = "Неверный логин или пароль";
           this.messageClass = "text-red-600";
