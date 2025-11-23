@@ -50,5 +50,13 @@ button {
     box-sizing: border-box;
     background-size: 100% auto;
     position: absolute;
-
+}
+.navigation {
+    padding: 1.4rem;
+    
+}
+.navigation a {
+    color: white;
+    text-decoration: none;
+    padding-left: 1.5rem;
 }
