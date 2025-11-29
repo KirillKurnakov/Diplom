@@ -3,33 +3,33 @@
   <header>
   </header>
   </div>
-  <div class="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
+  <div>
     <div class="blockinput">
-      <h2 class="text-2xl font-semibold text-center mb-4">Авторизация</h2>
+      <h2 >Авторизация</h2>
       <div class="loginpass">
       <input
         v-model="login_f"
         type="text"
         placeholder="Введите логин"
-        class="w-full mb-3 p-2 border rounded-xl"
+        
       />
 
       <input
         v-model="passw_f"
         type="password"
         placeholder="Введите пароль"
-        class="w-full mb-3 p-2 border rounded-xl"
+        
       />
       </div>
 
       <button
         @click="authorize"
-        class="w-full bg-blue-600 text-white py-2 rounded-xl hover:bg-blue-700 transition"
+        
       >
         Войти
       </button>
 
-      <p v-if="message" :class="messageClass" class="mt-4 text-center text-sm">
+      <p v-if="message" :class="messageClass" >
         {{ message }}
       </p>
     </div>
