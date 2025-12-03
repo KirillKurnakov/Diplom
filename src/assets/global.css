@@ -49,7 +49,7 @@ button {
     bottom:0;
     box-sizing: border-box;
     background-size: 100% auto;
-    position: absolute;
+    position:relative;
 }
 .navigation {
     padding: 1.4rem;
@@ -60,3 +60,61 @@ button {
     padding-left: 1.5rem;
     color:white;
 }
+
+table {
+    margin: 0 auto;
+    width: 95%;
+	border: 1px solid #dddddd;
+	border-collapse: collapse; 
+}
+
+.cell {
+  border: 1px solid black;
+  padding: 8px 12px;
+  text-align: center;
+}
+
+.btn {
+  border: 1px solid #333;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: white;
+  transition: 0.2s;
+}
+
+.btn:hover:not(:disabled) {
+  background: #f3f3f3;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* курсор указывает, что заголовки кликабельны */
+th {
+  user-select: none;
+  white-space: nowrap;
+}
+td {
+  color: black;
+  border: 1px solid black;
+  width: fit-content;
+}
+.filterstable {
+    padding: 0.3rem;
+    border: 1px solid black;
+}
+.filterstable input {
+    width: 80%;
+}
+
+.pagination {
+    color: black;
+
+}
+.pagination button {
+    color: black;
+    padding: auto;
+}
+

@@ -13,7 +13,7 @@
         </header>
     </div>
   <div class="min-h-screen flex flex-col items-center justify-start py-10 bg-gray-50">
-    <h1 class="text-3xl font-bold mb-6">План финансово-хозяйственной деятельности</h1>
+    <h1 class="text-3xl font-bold mb-6">737 форма</h1>
 
     <div v-if="loading">Загрузка...</div>
     <div v-else-if="error" class="text-red-500">{{ error }}</div>
@@ -54,13 +54,12 @@
 
         <tbody>
           <tr v-for="item in paginatedRows" :key="item.id">
-            <td class="cell">{{ item.inn }}</td>
-            <td class="cell">{{ item.sumcurfinyear }}</td>
-            <td class="cell">{{ item.sumsecondyearplper }}</td>
+            <td class="cell">{{ item.blocksubbo_inn }}</td>
             <td class="cell">{{ item.strcode }}</td>
-            <td class="cell">{{ item.id }}</td>
-            <td class="cell">{{ item.sumfirstyearplper }}</td>
-            <td class="cell">{{ item.finyear }}</td>
+            <td class="cell">{{ item.codeanalytic }}</td>
+            <td class="cell">{{ item.period }}</td>
+            <td class="cell">{{ item.periodicity }}</td>
+            <td class="cell">{{ item.total }}</td>
           </tr>
         </tbody>
       </table>
@@ -96,13 +95,12 @@ export default {
     const pageSize = 10;
 
     const columns = [
-      { field: "inn", label: "ИНН" },
-      { field: "sumcurfinyear", label: "Сумма текущий год" },
-      { field: "sumsecondyearplper", label: "Сумма второй год" },
+      { field: "blocksubbo_inn", label: "ИНН" },
       { field: "strcode", label: "Код строки" },
-      { field: "id", label: "ID" },
-      { field: "sumfirstyearplper", label: "Сумма первый год" },
-      { field: "finyear", label: "Финансовый год" },
+      { field: "codeanalytic", label: "Код аналитики" },
+      { field: "period", label: "Период" },
+      { field: "periodicity", label: "Период отчетности" },
+      { field: "total", label: "Значение текущего года" },
     ];
 
     // ---------- ФИЛЬТРЫ ----------
@@ -173,7 +171,7 @@ export default {
       error.value = null;
 
       try {
-        const res = await fetch("http://localhost:7778/enquiry/api/v1/getpfhd");
+        const res = await fetch("http://localhost:7778/enquiry/api/v1/getfkform");
         if (!res.ok) throw new Error(`Ошибка HTTP: ${res.status}`);
 
         const data = await res.json();

@@ -13,7 +13,7 @@
         </header>
     </div>
   <div class="min-h-screen flex flex-col items-center justify-start py-10 bg-gray-50">
-    <h1 class="text-3xl font-bold mb-6">План финансово-хозяйственной деятельности</h1>
+    <h1 class="text-3xl font-bold mb-6">Протоколы бюджетной комиссии</h1>
 
     <div v-if="loading">Загрузка...</div>
     <div v-else-if="error" class="text-red-500">{{ error }}</div>
@@ -55,12 +55,13 @@
         <tbody>
           <tr v-for="item in paginatedRows" :key="item.id">
             <td class="cell">{{ item.inn }}</td>
-            <td class="cell">{{ item.sumcurfinyear }}</td>
-            <td class="cell">{{ item.sumsecondyearplper }}</td>
-            <td class="cell">{{ item.strcode }}</td>
-            <td class="cell">{{ item.id }}</td>
-            <td class="cell">{{ item.sumfirstyearplper }}</td>
-            <td class="cell">{{ item.finyear }}</td>
+            <td class="cell">{{ item.report_date }}</td>
+            <td class="cell">{{ item.year_finance }}</td>
+            <td class="cell">{{ item.kbk }}</td>
+            <td class="cell">{{ item.subsidyictype }}</td>
+            <td class="cell">{{ item.finance }}</td>
+            <td class="cell">{{ item.taxes }}</td>
+            <td class="cell">{{ item.finance_without_tax }}</td>
           </tr>
         </tbody>
       </table>
@@ -97,12 +98,13 @@ export default {
 
     const columns = [
       { field: "inn", label: "ИНН" },
-      { field: "sumcurfinyear", label: "Сумма текущий год" },
-      { field: "sumsecondyearplper", label: "Сумма второй год" },
-      { field: "strcode", label: "Код строки" },
-      { field: "id", label: "ID" },
-      { field: "sumfirstyearplper", label: "Сумма первый год" },
-      { field: "finyear", label: "Финансовый год" },
+      { field: "report_date", label: "Отчетная дата" },
+      { field: "year_finance", label: "Год финансирования" },
+      { field: "kbk", label: "КБК" },
+      { field: "subsidyictype", label: "Код субсидии" },
+      { field: "finance", label: "Финансиирование" },
+      { field: "taxes", label: "Налоги" },
+      { field: "finance_without_tax", label: "Финансирование без налогов" },
     ];
 
     // ---------- ФИЛЬТРЫ ----------
@@ -173,7 +175,7 @@ export default {
       error.value = null;
 
       try {
-        const res = await fetch("http://localhost:7778/enquiry/api/v1/getpfhd");
+        const res = await fetch("http://localhost:7778/enquiry/api/v1/getprotocols");
         if (!res.ok) throw new Error(`Ошибка HTTP: ${res.status}`);
 
         const data = await res.json();
