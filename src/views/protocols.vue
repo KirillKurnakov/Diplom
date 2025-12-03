@@ -13,7 +13,7 @@
         </header>
     </div>
   <div class="min-h-screen flex flex-col items-center justify-start py-10 bg-gray-50">
-    <h1 class="text-3xl font-bold mb-6">737 форма</h1>
+    <h1 class="text-3xl font-bold mb-6">Протоколы бюджетной комиссии</h1>
 
     <div v-if="loading">Загрузка...</div>
     <div v-else-if="error" class="text-red-500">{{ error }}</div>

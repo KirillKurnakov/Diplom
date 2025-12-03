@@ -49,7 +49,7 @@ button {
     bottom:0;
     box-sizing: border-box;
     background-size: 100% auto;
-    position: absolute;
+    position:relative;
 }
 .navigation {
     padding: 1.4rem;

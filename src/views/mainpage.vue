@@ -7,7 +7,7 @@
                 <router-link to="/main/sourcepage">ПФХД</router-link>
                 <router-link to="/main/fkform">737 форма</router-link>
                 <router-link to="/main/protocols">Протоколы</router-link>
-                <router-link to="/dashboard">Дашборды</router-link>
+                <router-link to="/main/dashboard">Дашборды</router-link>
             </nav>
             </div>
         </header>
