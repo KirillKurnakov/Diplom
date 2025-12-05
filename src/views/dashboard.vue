@@ -1,23 +1,41 @@
 <template>
+    <div class="header">
+        <header>
+            <div class="navigation">
+            <nav>
+                <router-link to="/main">Главная</router-link>
+                <router-link to="/main/sourcepage">ПФХД</router-link>
+                <router-link to="/main/fkform">737 форма</router-link>
+                <router-link to="/main/protocols">Протоколы</router-link>
+                <router-link to="/main/dashboard">Дашборды</router-link>
+            </nav>
+            </div>
+        </header>
+    </div>
   <div class="p-6">
-    <h1 class="text-2xl font-bold mb-4">График PFHD</h1>
+    <h1 class="headers">График PFHD</h1>
 
     <div v-if="loading">Загрузка...</div>
     <div v-else-if="error" class="text-red-500">{{ error }}</div>
 
     <div v-show="!loading && !error">
       <!-- Линейный график PFHD -->
-      <div id="chart-container" style="width:100%; height:500px; margin-bottom:50px;"></div>
+      <div id="chart-container"></div>
 
       <!-- Столбчатая диаграмма субсидий -->
-      <h1 class="text-2xl font-bold mb-4 mt-10">Диаграмма субсидий</h1>
-      <div id="bar-chart-container" style="width:100%; height:500px; margin-bottom:50px;"></div>
+      <h1 class="headers">Диаграмма субсидий</h1>
+      <div id="bar-chart-container"></div>
 
       <!-- Новая диаграмма после гистограммы -->
-      <h1 class="text-2xl font-bold mb-4 mt-10">Субсидии по годам</h1>
-      <div id="bar2-chart-container" style="width:100%; height:500px;"></div>
+      <h1 class="headers">Субсидии по годам</h1>
+      <div id="bar2-chart-container"></div>
     </div>
   </div>
+    <div class="footer">
+        <footer>
+            
+        </footer>
+    </div>
 </template>
 
 <script setup>
@@ -97,7 +115,7 @@ function renderBarChart() {
 function renderBar2Chart() {
   Highcharts.chart("bar2-chart-container", {
     chart: { type: "bar" },
-    title: { text: bar2Data.value.title },
+    title: { text: "Наименование направления доходов" },
     xAxis: { categories: bar2Data.value.categories, title: { text: null } },
     yAxis: {
       min: 0,

@@ -3,6 +3,9 @@
   <header>
   </header>
   </div>
+  <div class="logo">
+    <img class="logo" src="../img/logomainpng.png"></img>
+  </div>
   <div>
     <div class="blockinput">
       <h2 >Авторизация</h2>
@@ -27,6 +30,9 @@
         
       >
         Войти
+      </button>
+      <button style="margin-left:2rem">
+        Регистрация
       </button>
 
       <p v-if="message" :class="messageClass" >
