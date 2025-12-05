@@ -7,13 +7,13 @@
                 <router-link to="/main/sourcepage">ПФХД</router-link>
                 <router-link to="/main/fkform">737 форма</router-link>
                 <router-link to="/main/protocols">Протоколы</router-link>
-                <router-link to="/dashboard">Дашборды</router-link>
+                <router-link to="/main/dashboard">Дашборды</router-link>
             </nav>
             </div>
         </header>
     </div>
   <div class="min-h-screen flex flex-col items-center justify-start py-10 bg-gray-50">
-    <h1 class="text-3xl font-bold mb-6">737 форма</h1>
+    <h1 class="headers">737 форма</h1>
 
     <div v-if="loading">Загрузка...</div>
     <div v-else-if="error" class="text-red-500">{{ error }}</div>
