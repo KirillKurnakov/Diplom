@@ -173,7 +173,7 @@ export default {
       error.value = null;
 
       try {
-        const res = await fetch("http://localhost:7778/enquiry/api/v1/getpfhd");
+        const res = await fetch("http://localhost:7779/enquiry/api/v1/getpfhd");
         if (!res.ok) throw new Error(`Ошибка HTTP: ${res.status}`);
 
         const data = await res.json();

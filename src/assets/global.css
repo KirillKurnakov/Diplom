@@ -131,6 +131,13 @@ td {
     margin-bottom: 0;
 }
 
+.logo1 {
+    width: 50%;
+    height: 75%;
+    align-items: center;
+    margin-bottom: 0;
+}
+
 .headers {
     margin-left: 2rem;
     margin-bottom: 1rem;
@@ -155,8 +162,9 @@ td {
 #bar2-chart-container {
     width:95%; 
     height:500px; 
-    margin-bottom:50px;
+    margin-bottom:5rem;
     margin-left: 2rem;
+    border-radius: 10px;
 }
 
 #highcharts-1aul5s4-1266 {

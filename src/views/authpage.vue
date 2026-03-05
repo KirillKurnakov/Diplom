@@ -62,7 +62,7 @@
       this.message = "Идет авторизация...";
 
       try {
-        const response = await fetch("http://localhost:7778/enquiry/api/v1/authorization", {
+        const response = await fetch("http://localhost:7779/enquiry/api/v1/authorization", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

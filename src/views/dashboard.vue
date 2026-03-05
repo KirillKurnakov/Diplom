@@ -13,7 +13,7 @@
         </header>
     </div>
   <div class="p-6">
-    <h1 class="headers">График PFHD</h1>
+    <h1 class="headers">График ПФХД</h1>
 
     <div v-if="loading">Загрузка...</div>
     <div v-else-if="error" class="text-red-500">{{ error }}</div>
@@ -27,7 +27,15 @@
       <div id="bar-chart-container"></div>
 
       <!-- Новая диаграмма после гистограммы -->
-      <h1 class="headers">Субсидии по годам</h1>
+      <h1 class="headers">Распределение видов доходов по годам</h1>
+      <div><p style="width: 50rem; margin-left: 2rem;">
+        0 - Доходы от собственности<br></br>
+        1 - Доходы от оказания платных услуг (работ), компенсации затрат<br></br>
+        2 - Доходы от штрафов, пеней, неустоек, возмещения ущерба<br></br>
+        3 - Безвозмездные денежные поступления<br></br>
+        4 - Доходы от операций с активами<br></br>
+        5 - Прочие доходы<br></br>
+      </p></div>
       <div id="bar2-chart-container"></div>
     </div>
   </div>
@@ -59,16 +67,16 @@ const bar2Data = ref(null);
 
 async function fetchData() {
   try {
-    const res1 = await fetch("http://localhost:7778/enquiry/api/v1/api/pfhd-chart");
+    const res1 = await fetch("http://localhost:7779/enquiry/api/v1/api/pfhd-chart");
     if (!res1.ok) throw new Error("Ошибка API PFHD: " + res1.status);
     chartData.value = await res1.json();
 
-    const res2 = await fetch("http://localhost:7778/enquiry/api/v1/api/protocols-chart");
+    const res2 = await fetch("http://localhost:7779/enquiry/api/v1/api/protocols-chart");
     if (!res2.ok) throw new Error("Ошибка API Протоколы: " + res2.status);
     protocolsData.value = await res2.json();
 
     // Новая диаграмма: заменяем API на fkform-chart
-    const res3 = await fetch("http://localhost:7778/enquiry/api/v1/api/fkform-chart");
+    const res3 = await fetch("http://localhost:7779/enquiry/api/v1/api/fkform-chart");
     if (!res3.ok) throw new Error("Ошибка API FKForm: " + res3.status);
     bar2Data.value = await res3.json();
 
@@ -86,6 +94,7 @@ function renderLineChart() {
     title: { text: chartData.value.title },
     xAxis: { categories: chartData.value.categories },
     yAxis: { title: { text: chartData.value.ytitle || "Y" }},
+    tooltip: { pointFormat: "<b>{point.y:.2f} млн рублей</b>" },
     series: chartData.value.series,
     credits: { enabled: false }
   });
@@ -105,7 +114,7 @@ function renderBarChart() {
       title: { text: protocolsData.value.ytitle },
     },
     series: protocolsData.value.series.map(s => ({ ...s, color: "#4A90E2" })),
-    tooltip: { pointFormat: "<b>{point.y:.2f} млн ₽</b>" },
+    tooltip: { pointFormat: "<b>{point.y:.2f} млн рублей</b>" },
     legend: { enabled: false },
     credits: { enabled: false }
   });

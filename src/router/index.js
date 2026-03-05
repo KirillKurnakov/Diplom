@@ -5,6 +5,7 @@ import SourcePage from '../views/sourcepage.vue'
 import FkForm from '../views/fkform.vue'
 import Protocols from '../views/protocols.vue'
 import Dashboard from '../views/dashboard.vue'
+import Spravki from '../views/spravki.vue'
 
 const routes = [
   { path: '/', component: HomePage },
@@ -13,6 +14,7 @@ const routes = [
   { path: '/main/fkform', component: FkForm},
   { path: '/main/protocols', component: Protocols},
   { path: '/main/dashboard', component: Dashboard},
+  { path: '/main/spravki', component: Spravki},
 ]
 
 const router = createRouter({
