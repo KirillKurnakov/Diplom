@@ -20,7 +20,7 @@
 
     <div v-else-if="rows.length" class="shadow-xl bg-white p-4 rounded-xl">
 
-      <table>
+      <table class="table-container">
         <thead>
           <!-- Заголовки -->
           <tr class="bg-gray-200">

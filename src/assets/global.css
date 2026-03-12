@@ -66,9 +66,104 @@ button {
 table {
     margin: 0 auto;
     width: 95%;
-	border: 1px solid #dddddd;
-	border-collapse: collapse; 
+	border: 3px solid black;
+	border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+} 
+
+.table-container {
+  width: 95%;
+  overflow-x: auto;
+  font-family: Arial, sans-serif;
 }
+
+/* Заголовок */
+thead tr:first-child {
+  background: #04346C;
+  color: white;
+}
+
+th {
+  padding: 10px 12px;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid #274E7D;
+}
+
+/* Hover на заголовке */
+th:hover {
+  background: #0E53A7;
+}
+
+/* Фильтры */
+.filterstable {
+  background: #274E7D;
+  padding: 6px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.filterstable input {
+  width: 100%;
+  padding: 6px;
+  text-align: center;
+  border: 1px solid #6899D3;
+  border-radius: 4px;
+  outline: none;
+}
+
+.filterstable input:focus {
+  border-color: #4284D3;
+  box-shadow: 0 0 4px rgba(66,132,211,0.4);
+}
+
+/* Ячейки */
+.cell {
+  padding: 10px 12px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Чередование строк */
+tbody tr:nth-child(even) {
+  background: #f7faff49;
+}
+
+/* Hover строк */
+tbody tr:hover {
+  background: #4284D3;
+  transition: 0.2s;
+}
+
+/* Пагинация */
+.pagination {
+  margin-top: 14px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  align-items: center;
+}
+
+.pagination button {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 6px;
+  background: #4284D3;
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.pagination button:hover:not(:disabled) {
+  background: #0E53A7;
+}
+
+.pagination button:disabled {
+  background: #c7d6ee;
+  cursor: not-allowed;
+}
+
 .cell {
   border: 1px solid black;
   padding: 8px 12px;

@@ -8,8 +8,8 @@
                 <router-link to="/main/fkform">737 форма</router-link>
                 <router-link to="/main/protocols">Протоколы</router-link>
                 <router-link to="/main/dashboard">Дашборды</router-link>
-                <router-link to="/main/spravkigigit ">Справки</router-link>
-                <router-link style="margin-left: 80rem;" to="/">Выйти</router-link>
+                <router-link to="/main/spravki">Справки</router-link>
+                <router-link style="margin-left: 30rem;" to="/">Выйти</router-link>
             </nav>
             </div>
         </header>
